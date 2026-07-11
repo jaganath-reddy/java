@@ -17,7 +17,7 @@ jobs:
           distribution: 'temurin'
 
       - name: compiling the java code
-        run: java Test.java
+        run: javac Test.java
 
       - name: execting java code
         run: java Test
