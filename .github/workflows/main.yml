@@ -1,0 +1,23 @@
+name: java project
+on:
+  push:
+    branches: [ "master" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: collecting the sourse code
+        uses: actions/checkout@v7.0.0
+
+      - name: installing java\
+        uses: actions/setup-java@v5.5.0
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: compiling the java code
+        run: javac Test.java
+
+      - name: execting java code
+        run: java Test
